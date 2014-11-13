@@ -1,0 +1,8 @@
+tap0 FTPServer
+tap1 WebServer
+tap2 TelServer (primer pata)
+tap3 TelServer (segunda pata)
+
+tap11 HostA
+tap12 HostB
+tap13 HostC
