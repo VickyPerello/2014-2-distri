@@ -3,7 +3,7 @@
 # Generar los taps
 echo Generando taps...
 sleep 1
-sudo openvpn --mktun --dev tap0 & #Servers
+sudo openvpn --mktun --dev tap0  #Servers
 sudo openvpn --mktun --dev tap1 &
 sudo openvpn --mktun --dev tap2 &
 sudo openvpn --mktun --dev tap3 &
