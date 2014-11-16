@@ -1,10 +1,12 @@
 #!/bin/bash
+sudo killall openvpn
+
 
 # Generar los taps
 echo Generando taps...
 sleep 1
 sudo openvpn --mktun --dev tap0  #Servers
-sudo openvpn --mktun --dev tap1 &
+#sudo openvpn --mktun --dev tap1 & #Por ahora la de webserver se prende aparte 
 sudo openvpn --mktun --dev tap2 &
 sudo openvpn --mktun --dev tap3 &
 
@@ -17,7 +19,7 @@ sudo openvpn --mktun --dev tap13 &
 echo Dando de alta las interfaces...
 sleep 1
 sudo ifconfig tap0 0.0.0.0 promisc up & #Servers
-sudo ifconfig tap1 0.0.0.0 promisc up &
+#sudo ifconfig tap1 0.0.0.0 promisc up &
 sudo ifconfig tap2 0.0.0.0 promisc up &
 sudo ifconfig tap3 0.0.0.0 promisc up &
 
@@ -27,3 +29,4 @@ sudo ifconfig tap13 0.0.0.0 promisc up &
 
 
 #TODO: cuando este hecho, desde aca levantamos los servers
+
