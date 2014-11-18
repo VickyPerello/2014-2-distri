@@ -12,7 +12,6 @@ openvpn --rmtun --dev tap12
 openvpn --rmtun --dev tap13
 
 
-
 openvpn --remote $1 --port 1983 --dev tap0 --ifconfig 10.8.11.1 255.255.255.0 245.2.18.82 &
 sleep 25
 

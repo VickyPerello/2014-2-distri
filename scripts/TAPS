@@ -3,6 +3,6 @@ tap1 WebServer
 tap2 TelServer (primer pata)
 tap3 TelServer (segunda pata)
 
-tap11 HostA
-tap12 HostB
-tap13 HostC
+tap11 HostA 10.79.7.200
+tap12 HostB 10.51.111.200
+tap13 HostC 10.8.207.120
