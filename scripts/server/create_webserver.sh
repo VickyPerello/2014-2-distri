@@ -1,8 +1,19 @@
 #!/bin/bash
 #Usage: por $1 pasas la dire de ip donde corre la topologia
 
-openvpn --remote $1 --dev tap1 port 1984 --ifconfig 192.168.45.1 255.255.255.0 245.2.18.82
-sleep 3
+
+killall openvpn
+openvpn --rmtun --dev tap0
+openvpn --rmtun --dev tap1
+openvpn --rmtun --dev tap2
+openvpn --rmtun --dev tap3
+openvpn --rmtun --dev tap11
+openvpn --rmtun --dev tap12
+openvpn --rmtun --dev tap13
+
+
+openvpn --remote $1 --port 1984 --dev tap1 --ifconfig 192.168.45.1 255.255.255.0 245.2.18.82 &
+sleep 25
 
 
 route add -net 10.8.207.0 netmask 255.255.255.224 gw 192.168.45.2 metric 1
@@ -32,4 +43,5 @@ route add -net 172.19.3.88 netmask 255.255.255.252 gw 192.168.45.4 metric 1
 route add -net 172.19.3.92 netmask 255.255.255.252 gw 192.168.45.1 metric 1
 route add -net 172.19.3.96 netmask 255.255.255.252 gw 192.168.45.1 metric 1
 
+cp index.html /var/www/
 

@@ -1,18 +1,11 @@
 #!/bin/bash
 #Por ahora este es el script que limpia todo.
 
-
 killall openvpn
-
-
-taps=`ifconfig | egrep "tap" | sed 's/^\([A-Za-z0-9]*\).*/\1/'`
-for tap in $taps
-do
-	`ip route flush dev $tap`
-done
-
-interfaces=`ifconfig | egrep "eth" | sed 's/^\([A-Za-z0-9:]*\).*/\1/'`
-for interfaz in $interfaces
-do
-	`ip addr flush "$interfaz"`
-done
+openvpn --rmtun --dev tap0
+openvpn --rmtun --dev tap1
+openvpn --rmtun --dev tap2
+openvpn --rmtun --dev tap3
+openvpn --rmtun --dev tap11
+openvpn --rmtun --dev tap12
+openvpn --rmtun --dev tap13
