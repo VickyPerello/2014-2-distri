@@ -1,0 +1,5 @@
+Los scripts correspondientes primero borran todo rastros de túneles tap y de procesos openvpn, levantan el tap, configuran las tablas de ruteo y luego reinician el servidor correspondiente.
+En la máquina que simulará servers se debe correr el script correspondiente y darle como parámetro la dirección IP de la máquina con la topología. Ej:
+Si quiero correr el webserver apache
+	$ sudo ./create_webserver.sh IP_MAQUINA_TOPOLOGIA
+

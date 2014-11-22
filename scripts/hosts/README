@@ -1,0 +1,5 @@
+Los scripts correspondientes primero borran todo rastros de tuneles tap y de procesos openvpn y luego levantan el tap correspondiente.
+En la máquina que simulará hosts se debe correr el script correspondiente y darle como parámetro la dirección IP de la máquina con la topología. Ej:
+Si quiero correr el host B
+	$ sudo ./create_hostb.sh IP_MAQUINA_TOPOLOGIA
+

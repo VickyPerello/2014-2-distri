@@ -1,0 +1,12 @@
+
+Hay un script principal denominado "setup.sh" que es el encargado de matar todos los procesos de openvpn y destruir todos los taps hechos en esa maquina (o por lo menos los que nos interesan a nosotros).
+Básicamente se encargan de borrar la configuración previa de red que tenía la máquina, y dejarla limpia para poder utilizar nuestras configuraciones.
+No lleva parametros
+Es decir
+	$ sudo ./setup.sh
+
+Luego, antes de levantar la topología, se necesita correr "create_taps.sh" y lleva como parametros la dirección de ip de la máquina que correrá los servers y luego la de la máquina que simulará los hosts A, B y C.
+Es decir:
+	$ sudo ./create_taps.sh IP_MAQUINA_SERVERS IP_MAQUINA_HOSTS
+
+
